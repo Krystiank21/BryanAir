@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edycja lotu</title>
+    <link rel ="stylesheet" href="/edit.css">
+    <link rel ="stylesheet" href="/commons.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+    <form method="post" id="edit-form">
+        <input type="text" th:field="*{flight.flightNumber}">
+        <input type="text" th:field="*{flight.departure}">
+        <input type="text" th:field="*{flight.arrival}">
+        <input type="text" th:field="*{flight.price}">
+        <input type="text" th:field="*{flight.seats}">
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>
+

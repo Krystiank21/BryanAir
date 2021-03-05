@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Koszyk</title>
+    <link rel="stylesheet" href="/basket.css">
+    <link rel="stylesheet" href="/commons.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+
+    <div class="row-header">
+        <div class="flightNumber">Numer lotu</div>
+        <div class="from">Z</div>
+        <div class="to">Do</div>
+        <div class="price">Cena</div>
+    </div>
+
+    <th:block th:each="flight : ${flights}">
+    <div class="row">
+        <div class="flightNumber" th:text="${flight.flightNumber}"></div>
+        <div class="from" th:text="${flight.departure}"></div>
+        <div class="to" th:text="${flight.arrival}"></div>
+        <div class="totalPrice" th:text="${flight.price} + 'zł'"></div>
+        <a th:href="@{/remove-from-basket/{id}(id=${flight.id})}" class="remove-button"></a>
+        </div>
+</th:block>
+
+    <div class="row-bottom">
+        <div class="price">Razem</div>
+        <div class="total" th:text="' ' +${sum} + ' zł'"></div>
+        <a th:href="@{/buy}" class="buy-basket-button">KUP</a>
+    </div>
+</div>
+</body>
+</html>

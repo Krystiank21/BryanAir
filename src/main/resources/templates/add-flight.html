@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Flight</title>
+    <link rel ="stylesheet" href="/add-flight.css">
+    <link rel ="stylesheet" href="/commons.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+    <form id="add-flight-form" th:method="post">
+        <input type="text" placeholder="Numer lotu" th:field="*{flightModel.flightNumber}">
+        <input type="text" placeholder="Z" th:field="*{flightModel.departure}">
+        <input type="text" placeholder="Do" th:field="*{flightModel.arrival}">
+        <input type="text" placeholder="Cena" th:field="*{flightModel.price}">
+        <input type="text" placeholder="Miejsca" th:field="*{flightModel.seats}">
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,46 @@
+package pl.edu.wszib.bryan.air.session;
+
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
+import pl.edu.wszib.bryan.air.model.Flight;
+import pl.edu.wszib.bryan.air.model.User;
+import java.util.ArrayList;
+import java.util.List;
+
+@Component
+@SessionScope
+public class SessionObject {
+    private User loggedUser = null;
+    private String info = null;
+    private List<Flight> basket = new ArrayList<>();
+
+    public User getLoggedUser() {
+        return loggedUser;
+    }
+
+    public void setLoggedUser(User loggedUser) {
+        this.loggedUser = loggedUser;
+    }
+
+    public boolean isLogged() {
+        return this.loggedUser != null;
+    }
+
+    public void setInfo(String info) {
+        this.info = info;
+    }
+
+    public String getInfo() {
+        String temp = this.info;
+        this.info = null;
+        return temp;
+    }
+
+    public List<Flight> getBasket() {
+        return basket;
+    }
+
+    public void setBasket(List<Flight> basket) {
+        this.basket = basket;
+    }
+}

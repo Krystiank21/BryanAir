@@ -1,0 +1,82 @@
+.row {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 200px;
+    margin: 5px auto;
+    font-size: 26px;
+    padding: 2px;
+    text-align: center;
+    border: 2px solid black;
+
+}
+
+.row-header{
+    display:flex;
+    align-items: center;
+    color: gray;
+    justify-content: center;
+    width: 80%;
+    font-size: 20px;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.row-bottom{
+    display: inline-block;
+    align-content: flex-end;
+    float: right;
+    font-size: 24px;
+    width: 80%;
+    margin: 15px auto;
+    text-align: center;
+}
+
+.flightNumber {
+    width: 39%;
+    display: inline-block;
+}
+
+.from{
+    width: 20%;
+    display: inline-block;
+}
+
+.to{
+    width: 20%;
+    display: inline-block;
+}
+.price{
+    width: 20%;
+    display: inline-block;
+}
+
+
+.remove-button{
+    background-image: url("remove.png");
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    background-size: contain;
+    float: right;
+    margin-top: -30px;
+}
+
+.buy-basket-button{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 200px;
+
+    display: inline-block;
+    font-size: 32px;
+    border: 1px solid black;
+    color: red;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: color 0.5s, background-color 0.5s;
+    text-decoration: none;
+
+}

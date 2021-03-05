@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>BryanAir</title>
+    <link rel="stylesheet" href="/main.css">
+    <link rel="stylesheet" href="/commons.css">
+</head>
+<body>
+<div th:replace="fragments.html :: logo"></div>
+<div th:replace="fragments.html :: menu"></div>
+<div id="content">
+<th:block th:each="flight : ${flights}">
+    <div class="flight-box">
+        <div th:text=" 'z ' + ${flight.departure}" class="city-box"></div>
+        <div th:text=" 'do ' +${flight.arrival}" class="city-box"></div>
+        <div th:text="${flight.flightNumber}" class="flight-number-box"></div>
+        <div class="flight-data-box">
+            <div th:text="'Ilość sztuk: ' + ${flight.seats}" class="pieces-box"></div>
+            <div th:text="'Cena: ' + ${flight.price}+ ' zł'" class="price-box"></div>
+
+            <a th:href="@{/add-to-basket/{id}(id=${flight.id})}" class="buy-button"
+               th:if="${isLogged}" ></a>
+
+            <a th:href="@{/edit/{id}(id=${flight.id})}" class="edit-button"
+               th:if="${role == 'ADMIN'}" ></a>
+
+            <a th:href="@{/remove-flight/{id}(id=${flight.id})}"
+               th:if="${role=='ADMIN'}" class="remove-button"></a>
+        </div>
+    </div>
+</th:block>
+</div>
+</body>
+</html>
