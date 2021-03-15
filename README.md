@@ -1,6 +1,10 @@
 # BryanAir
+Web Application
 
-Aplikacja do zakupów biletów lotniczych.
+User of the application has an option to purchase the ticket.
 
-Wszyscy użytkownicy mają takie same hasła co loginy.
-Eksport bazy danych sql znajduje się w resources.
+Admin is authorized to add, edit or remove flights.
+
+App uses Hibernate to connect to the database. Other technologies used for project: Maven, Spring, Hibernate, JUnit, MVC.
+
+SQL file needed to implements database is in resource.
